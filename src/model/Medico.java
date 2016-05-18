@@ -8,14 +8,14 @@ public class Medico {
 	private String nome;
 	private String cognome;
 	private String specializzazione;
-	private List<Esame> esamiDaSostenere;
+	private List<Esame> esamiSostenuti;
 	private String codice;
 
 	public Medico(String nome, String cognome, String specializzazione) {
 		this.nome = nome;
 		this.cognome = cognome;
 		this.specializzazione = specializzazione;
-		this.esamiDaSostenere = new ArrayList<>();
+		this.esamiSostenuti = new ArrayList<>();
 		this.codice = UUID.randomUUID().toString();
 	}
 
@@ -58,14 +58,5 @@ public class Medico {
 		return this.getCodice().equals(medico.getCodice());
 	}
 
-
-	public void addEsame(Esame esame) {
-		this.esamiDaSostenere.add(esame);
-	}
-
-	public List<Esame> getEsamiDaSostenere() {
-		return this.esamiDaSostenere;
-	}
-	
 	
 }
