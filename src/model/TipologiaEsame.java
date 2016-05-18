@@ -13,7 +13,6 @@ public class TipologiaEsame {
 	// TODO il codice per il momento è null
 	public TipologiaEsame() {
 	}
-
 	public TipologiaEsame(String nome, String descrizione, Float costo) {
 		this.nome = nome;
 		this.descrizione = descrizione;
