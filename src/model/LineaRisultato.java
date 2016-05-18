@@ -24,16 +24,14 @@ public class LineaRisultato {
 	//TODO equals e hashcode sul valore
 	
 	@Override
-public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+	public boolean equals(Object obj) {
+		LineaRisultato linea = (LineaRisultato)obj;
+		return this.getValore().equals(linea.getValore());
 	}
 	  
 	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+	public int hashCode() {
+		return this.getValore().hashCode();
 	}
-	
 	
 }
