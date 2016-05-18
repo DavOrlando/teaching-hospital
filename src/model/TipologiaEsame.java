@@ -61,4 +61,14 @@ public class TipologiaEsame {
 		this.costo = costo;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		TipologiaEsame tipologia = (TipologiaEsame)obj;
+		return this.getNome().equals(tipologia.getNome());
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getNome().hashCode();
+	}
 }

@@ -36,9 +36,13 @@ public class NormaDiPreparazione {
 	
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		NormaDiPreparazione norme = (NormaDiPreparazione)obj;
+		return this.getNome().equals(norme.getNome());
 	}
 
+	@Override
+	public int hashCode() {
+		return this.getNome().hashCode();
+	}
 
 }

@@ -37,14 +37,12 @@ public class inserisciEsameTest {
 	@Test
 	public void nessunEsameAggiuntoAlPazienteTest() {
 		assertTrue(this.paziente.getEsamiDaSostenere().isEmpty());
-		assertTrue(this.medico.getEsamiDaSostenere().isEmpty());
 	}
 
 	@Test
 	public void unEsameAggiuntoTest() {
 		this.thweb.inserisciEsame(this.paziente.getCodiceFiscale(), this.medico.getCodice(), MAGGIO_22_2016);
 		assertFalse(this.paziente.getEsamiDaSostenere().isEmpty());
-		assertFalse(this.medico.getEsamiDaSostenere().isEmpty());
 		assertEquals(this.medico, this.paziente.getEsamiDaSostenere().get(0).getMedico());
 	}
 
@@ -52,7 +50,6 @@ public class inserisciEsameTest {
 	public void dueEsamiAggiuntiTest() {
 		this.thweb.inserisciEsame(this.paziente.getCodiceFiscale(), this.medico.getCodice(), MAGGIO_22_2016);
 		this.thweb.inserisciEsame(this.paziente.getCodiceFiscale(), this.medico.getCodice(), MAGGIO_23_2016);
-		assertEquals(2, this.medico.getEsamiDaSostenere().size());
 		assertEquals(2, this.paziente.getEsamiDaSostenere().size());
 	}
 }

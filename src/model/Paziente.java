@@ -91,6 +91,15 @@ public class Paziente {
 	
  //TODO equals e hashcode sul codiceFiscale
 	
+	@Override
+	public boolean equals(Object obj) {
+		Paziente paziente = (Paziente)obj;
+		return this.getCodiceFiscale().equals(paziente.getCodiceFiscale());
+	}
 
+	@Override
+	public int hashCode() {
+		return this.getCodiceFiscale().hashCode();
+	}
 
 }
