@@ -21,7 +21,6 @@ public class Esame {
 		this.medico = medico;
 		this.paziente = paziente;
 		this.paziente.addEsame(this);
-		this.medico.addEsame(this);
 	}
 
 	public String getCodice() {
