@@ -23,4 +23,15 @@ public class Amministratore {
 		this.password = password;
 	}
 
+	// TODO equals e hash code su username
+	@Override
+	public boolean equals(Object obj) {
+		Amministratore admin = (Amministratore) obj;
+		return this.getUsername().equals(admin.getUsername());
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getUsername().hashCode();
+	}
 }
