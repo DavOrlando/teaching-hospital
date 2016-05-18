@@ -1,6 +1,8 @@
 package model;
 
 import java.util.Date;
+import java.util.UUID;
+
 
 public class Esame {
 	private String codice;
@@ -14,6 +16,7 @@ public class Esame {
 	// E' davvero utile passare subito nel costruttore Medico e Paziente (in
 	// relazione ai casi d'uso?)
 	public Esame(Date dataAvvenutaPrenotazione, Date dataEsame, Medico medico, Paziente paziente, TipologiaEsame tipologiaEsameCorrente) {
+		this.codice = UUID.randomUUID().toString();
 		this.dataAvvenutaPrenotazione = dataAvvenutaPrenotazione;
 		this.dataEsame = dataEsame;
 		this.medico = medico;
@@ -77,5 +80,16 @@ public class Esame {
 	public void setTipologiaEsame(TipologiaEsame tipologiaEsame) {
 		this.tipologiaEsame = tipologiaEsame;
 	}
+	
+	//TODO equals e hashcode sul codice
 
+	@Override
+	public boolean equals(Object obj) {
+		Esame exam = (Esame)obj;
+		return this.getCodice().equals(exam.getCodice());
+	}
+	@Override
+	public int hashCode() {
+		return this.getCodice().hashCode();
+	}
 }

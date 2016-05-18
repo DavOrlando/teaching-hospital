@@ -5,12 +5,13 @@ import java.util.Date;
 import java.util.List;
 
 public class Paziente {
+	
 	private String nome;
 	private String cognome;
 	private String codiceFiscale;
 	private String indirizzo;
 	private Date dataNascita;
-	private String codice;
+	private String username;
 	private String password;
 	private String email;
 	private List<Esame> esamiDaSostenere;
@@ -23,7 +24,7 @@ public class Paziente {
 		this.codiceFiscale = codiceFiscale;
 		this.indirizzo = indirizzo;
 		this.dataNascita = dataNascita;
-		this.codice = codice;
+		this.username = codice;
 		this.password = password;
 		this.email = email;
 		this.esamiDaSostenere = new ArrayList<Esame>();
@@ -71,11 +72,11 @@ public class Paziente {
 	}
 
 	public String getCodice() {
-		return codice;
+		return username;
 	}
 
 	public void setCodice(String codice) {
-		this.codice = codice;
+		this.username = codice;
 	}
 
 	public String getPassword() {
@@ -105,7 +106,9 @@ public class Paziente {
 	public List<Esame> getEsamiSostenuti() {
 		return esamiSostenuti;
 	}
-
+	
+ //TODO equals e hashcode sul codiceFiscale
+	
 
 
 }
