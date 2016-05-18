@@ -20,6 +20,9 @@ public class LineaRisultato {
 		this.valore = valore;
 	}
 	
+	
+	//TODO equals e hashcode sul valore
+	
 	@Override
 public String toString() {
 		// TODO Auto-generated method stub

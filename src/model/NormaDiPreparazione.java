@@ -3,7 +3,6 @@ package model;
 public class NormaDiPreparazione {
 	private String nome;
 	private String descrizione;
-	private String daElminare;
 	
 	public NormaDiPreparazione() {
 		// TODO Auto-generated constructor stub
@@ -30,12 +29,9 @@ public class NormaDiPreparazione {
 		this.descrizione = descrizione;
 	}
 	
-	@Override
-
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
-	}
+	
+	//TODO equals e hashcode sul nome
+	
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub

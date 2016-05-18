@@ -3,7 +3,6 @@ package model;
 import java.util.List;
 
 public class TipologiaEsame {
-	private Long codice;
 	private String nome;
 	private String descrizione;
 	private Float costo;
@@ -13,7 +12,6 @@ public class TipologiaEsame {
 
 	public TipologiaEsame() {	}
 	
-	// TODO il codice per il momento è null
 	public TipologiaEsame(String nome, String descrizione, Float costo) {
 		this.nome = nome;
 		this.descrizione = descrizione;
@@ -21,12 +19,7 @@ public class TipologiaEsame {
 		
 	}
 
-	public Long getCodice() {
-		return codice;
-	}
-	public void setCodice(Long codice) {
-		this.codice = codice;
-	}
+	
 	public String getNome() {
 		return nome;
 	}

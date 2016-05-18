@@ -105,7 +105,9 @@ public class Paziente {
 	public List<Esame> getEsamiSostenuti() {
 		return esamiSostenuti;
 	}
-
+	
+ //TODO equals e hashcode sul codiceFiscale
+	
 
 
 }

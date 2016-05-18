@@ -18,6 +18,9 @@ public class ElencoRisultato {
 	public void setLineeRisultato(List<LineaRisultato> lineeRisultato) {
 		this.lineeRisultato = lineeRisultato;
 	}
+	
+	//TODO da rivedere in seguito
+	
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub
