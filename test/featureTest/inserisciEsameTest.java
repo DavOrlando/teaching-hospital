@@ -2,19 +2,16 @@ package featureTest;
 
 import static org.junit.Assert.*;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import model.Esame;
 import model.Medico;
 import model.Paziente;
 import model.THWeb;
 import model.TeachingHospital;
 import model.TipologiaEsame;
-import sun.util.resources.CalendarData;
 
 public class inserisciEsameTest {
 	private static final Date MAGGIO_23_2016 = new Date(2016, 5, 23);
@@ -31,8 +28,7 @@ public class inserisciEsameTest {
 		this.thweb = this.teachingHospital.getThWeb();
 		this.medico = new Medico("Giovanni", "Rana", "Cardiologia");
 		this.tipologiaEsameCorrente = new TipologiaEsame("Visita cardiologica", "Una visita...", (float) 50);
-		this.paziente = new Paziente("Mario", "Rossi", "MRRSS94D12H492J", "Via del Corso 12", new Date(1994, 12, 21),
-				"000001", "laMiaPassword", "mario@test.com");
+		this.paziente = new Paziente("Mario", "Rossi", "MRRSS94D12H492J", "Via del Corso 12", new Date(1994, 12, 21), "laMiaPassword", "mario@test.com");
 
 		this.teachingHospital.getPaziente(this.paziente);
 		this.teachingHospital.addMedico(this.medico);
