@@ -26,7 +26,7 @@ public class inserisciEsameTest {
 	public void setUp() throws Exception {
 		this.teachingHospital = new TeachingHospital();
 		this.thweb = this.teachingHospital.getThWeb();
-		this.medico = new Medico("Giovanni", "Rana", "323232", "suaPassword", "Cardiologia");
+		this.medico = new Medico("Giovanni", "Rana", "Cardiologia");
 		this.tipologiaEsameCorrente = new TipologiaEsame("Visita cardiologica", "Una visita...", (float) 50);
 		this.paziente = new Paziente("Mario", "Rossi", "MRRSS94D12H492J", "Via del Corso 12", new Date(1994, 12, 21),
 				"000001", "laMiaPassword", "mario@test.com");

@@ -2,23 +2,25 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Medico {
 	private String nome;
 	private String cognome;
-	private String codice;
-	private String password;
 	private String specializzazione;
 	private List<Esame> esamiDaSostenere;
+	private String codice;
 
-	public Medico(String nome, String cognome, String codice, String password, String specializzazione) {
+	public Medico(String nome, String cognome, String specializzazione) {
 		this.nome = nome;
 		this.cognome = cognome;
-		this.codice = codice;
-		this.password = password;
 		this.specializzazione = specializzazione;
 		this.esamiDaSostenere = new ArrayList<>();
+		this.codice = UUID.randomUUID().toString();
+	}
 
+	public String getCodice() {
+		return codice;
 	}
 
 	public void setSpecializzazione(String specializzazione) {
@@ -41,31 +43,14 @@ public class Medico {
 		this.cognome = cognome;
 	}
 
-	public String getCodice() {
-		return codice;
-	}
-
-	public void setCodice(String codice) {
-		this.codice = codice;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getSpecializzazione() {
 		return specializzazione;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return this.codice.hashCode();
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -73,7 +58,7 @@ public class Medico {
 		return this.getCodice().equals(medico.getCodice());
 	}
 
-	
+
 	public void addEsame(Esame esame) {
 		this.esamiDaSostenere.add(esame);
 	}
@@ -81,4 +66,6 @@ public class Medico {
 	public List<Esame> getEsamiDaSostenere() {
 		return this.esamiDaSostenere;
 	}
+	
+	
 }
