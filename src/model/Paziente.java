@@ -11,20 +11,18 @@ public class Paziente {
 	private String codiceFiscale;
 	private String indirizzo;
 	private Date dataNascita;
-	private String username;
 	private String password;
 	private String email;
 	private List<Esame> esamiDaSostenere;
 	private List<Esame> esamiSostenuti;
 
 	public Paziente(String nome, String cognome, String codiceFiscale, String indirizzo, Date dataNascita,
-			String codice, String password, String email) {
+			String codice, String email) {
 		this.nome = nome;
 		this.cognome = cognome;
 		this.codiceFiscale = codiceFiscale;
 		this.indirizzo = indirizzo;
 		this.dataNascita = dataNascita;
-		this.username = codice;
 		this.password = password;
 		this.email = email;
 		this.esamiDaSostenere = new ArrayList<Esame>();
@@ -69,22 +67,6 @@ public class Paziente {
 
 	public void setDataNascita(Date dataNascita) {
 		this.dataNascita = dataNascita;
-	}
-
-	public String getCodice() {
-		return username;
-	}
-
-	public void setCodice(String codice) {
-		this.username = codice;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public String getEmail() {
