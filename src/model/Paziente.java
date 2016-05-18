@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Paziente {
-	
+
 	private String nome;
 	private String cognome;
 	private String codiceFiscale;
@@ -15,16 +15,18 @@ public class Paziente {
 	private String email;
 	private List<Esame> esamiDaSostenere;
 	private List<Esame> esamiSostenuti;
+	private String telefono;
 
 	public Paziente(String nome, String cognome, String codiceFiscale, String indirizzo, Date dataNascita,
-			String codice, String email) {
+			String telefono, String email) {
 		this.nome = nome;
 		this.cognome = cognome;
 		this.codiceFiscale = codiceFiscale;
 		this.indirizzo = indirizzo;
 		this.dataNascita = dataNascita;
-		this.password = password;
+		this.password = null; /////////////////////////////////////////////
 		this.email = email;
+		this.setTelefono(telefono);
 		this.esamiDaSostenere = new ArrayList<Esame>();
 		this.esamiSostenuti = new ArrayList<Esame>();
 	}
@@ -69,6 +71,14 @@ public class Paziente {
 		this.dataNascita = dataNascita;
 	}
 
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -88,12 +98,12 @@ public class Paziente {
 	public List<Esame> getEsamiSostenuti() {
 		return esamiSostenuti;
 	}
-	
- //TODO equals e hashcode sul codiceFiscale
-	
+
+	// TODO equals e hashcode sul codiceFiscale
+
 	@Override
 	public boolean equals(Object obj) {
-		Paziente paziente = (Paziente)obj;
+		Paziente paziente = (Paziente) obj;
 		return this.getCodiceFiscale().equals(paziente.getCodiceFiscale());
 	}
 

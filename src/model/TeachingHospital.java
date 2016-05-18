@@ -56,4 +56,8 @@ public class TeachingHospital {
 		this.pazienti.put(paziente.getCodiceFiscale(), paziente);
 	}
 
+	public void addPaziente(Paziente paziente) {
+		this.pazienti.put(paziente.getCodiceFiscale(),paziente);
+	}
+
 }
