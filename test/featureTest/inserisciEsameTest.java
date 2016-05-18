@@ -2,19 +2,16 @@ package featureTest;
 
 import static org.junit.Assert.*;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import model.Esame;
 import model.Medico;
 import model.Paziente;
 import model.THWeb;
 import model.TeachingHospital;
 import model.TipologiaEsame;
-import sun.util.resources.CalendarData;
 
 public class inserisciEsameTest {
 	private static final Date MAGGIO_23_2016 = new Date(2016, 5, 23);
