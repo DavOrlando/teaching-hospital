@@ -10,10 +10,10 @@ public class TipologiaEsame {
 	private List<NormaDiPreparazione> norme;
 	private List<IndicatoreRisultato> indicatoriRisultato;
 
+	// TODO il codice per il momento è null
 	public TipologiaEsame() {
 	}
 
-	// TODO il codice per il momento è null
 	public TipologiaEsame(String nome, String descrizione, Float costo) {
 		this.nome = nome;
 		this.descrizione = descrizione;
@@ -36,7 +36,6 @@ public class TipologiaEsame {
 	public List<IndicatoreRisultato> getIndicatoriRisultato() {
 		return indicatoriRisultato;
 	}
-	
 
 	public String getNome() {
 		return nome;

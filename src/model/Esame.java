@@ -3,7 +3,6 @@ package model;
 import java.util.Date;
 import java.util.UUID;
 
-
 public class Esame {
 	private String codice;
 	private Date dataAvvenutaPrenotazione;
@@ -16,7 +15,7 @@ public class Esame {
 	// E' davvero utile passare subito nel costruttore Medico e Paziente (in
 	// relazione ai casi d'uso?)
 	public Esame(Date dataAvvenutaPrenotazione, Date dataEsame, Medico medico, Paziente paziente, TipologiaEsame tipologiaEsameCorrente) {
-		this.codice = UUID.randomUUID().toString();
+		this.codice= UUID.randomUUID().toString();
 		this.dataAvvenutaPrenotazione = dataAvvenutaPrenotazione;
 		this.dataEsame = dataEsame;
 		this.medico = medico;

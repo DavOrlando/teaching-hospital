@@ -58,6 +58,7 @@ public class Medico {
 		return this.getCodice().equals(medico.getCodice());
 	}
 
+
 	public void addEsame(Esame esame) {
 		this.esamiDaSostenere.add(esame);
 	}
