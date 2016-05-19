@@ -21,7 +21,7 @@ public class THWeb {
 	public void setTeachingHospital(TeachingHospital teachingHospital) {
 		this.teachingHospital = teachingHospital;
 	}
-	
+
 	public Paziente getPazienteCorrente() {
 		return pazienteCorrente;
 	}
@@ -38,25 +38,45 @@ public class THWeb {
 		return this.teachingHospital.getTipologiaEsame(codiceTipologia);
 	}
 
-	public void inserisciEsame(String codiceFiscale, String codiceMedico, Date dataEsame) {
+	public void inserisciEsame(String codiceFiscalePaziente, String codiceMedico, Date dataEsame) {
 		Medico medico = this.teachingHospital.getMedico(codiceMedico);
-		Paziente paziente = this.teachingHospital.getPaziente(codiceFiscale);
-		Esame esame = new Esame(Calendar.getInstance().getTime(), dataEsame, medico, paziente, tipologiaEsameCorrente);
+		Paziente paziente = this.teachingHospital.getPaziente(codiceFiscalePaziente);
+		Esame esame = new Esame(Calendar.getInstance().getTime(), dataEsame, medico, paziente, this.tipologiaEsameCorrente);
 	}
 
+	/***
+	 * 
+	 */
 	public void iniziaInserimentoEsame() {
 		// ???
 	}
 
+	/***
+	 * @param nome
+	 * @param cognome
+	 * @param codiceFiscale
+	 * @param indirizzo
+	 * @param dataNascita
+	 * @param telefono
+	 * @param email
+	 * 
+	 *Il metodo setta la variabile di istanza pazienteCorrente con il Paziente che viene creato grazie ai parametri
+	 *passati come attributo.
+	 * 
+	 */
 	public void inserisciPaziente(String nome, String cognome, String codiceFiscale, String indirizzo, Date dataNascita,
 			String telefono, String email) {
 		this.setPazienteCorrente(new Paziente(nome, cognome, codiceFiscale, indirizzo, dataNascita, telefono, email));
 	}
-	
-	public void confermaInserimentoPaziente(Paziente paziente){
+
+	/***
+	 * 
+	 * @param paziente	  
+	 *Il metodo inserisce nella mappa dei pazienti di teachingHospital il
+	 *paziente passato come parametro
+	 */
+	public void confermaInserimentoPaziente(Paziente paziente) {
 		this.teachingHospital.addPaziente(this.getPazienteCorrente());
 	}
-
-	
 
 }

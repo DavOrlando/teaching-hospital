@@ -26,7 +26,7 @@ public class Paziente {
 		this.dataNascita = dataNascita;
 		this.password = null; /////////////////////////////////////////////
 		this.email = email;
-		this.setTelefono(telefono);
+		this.telefono = telefono;
 		this.esamiDaSostenere = new ArrayList<Esame>();
 		this.esamiSostenuti = new ArrayList<Esame>();
 	}

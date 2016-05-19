@@ -47,13 +47,13 @@ public class TeachingHospital {
 	public Paziente getPaziente(String codiceFiscale) {
 		return this.pazienti.get(codiceFiscale);
 	}
+	
+	public List<Paziente> getAllPazienti(){
+		return new ArrayList<Paziente>(this.pazienti.values());
+	}
 
 	public void addMedico(Medico medico) {
 		this.medici.put(medico.getCodice(), medico);
-	}
-
-	public void getPaziente(Paziente paziente) {
-		this.pazienti.put(paziente.getCodiceFiscale(), paziente);
 	}
 
 	public void addPaziente(Paziente paziente) {

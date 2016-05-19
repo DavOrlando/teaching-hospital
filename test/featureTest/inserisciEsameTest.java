@@ -2,11 +2,13 @@ package featureTest;
 
 import static org.junit.Assert.*;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import model.Esame;
 import model.Medico;
 import model.Paziente;
 import model.THWeb;
@@ -30,26 +32,42 @@ public class inserisciEsameTest {
 		this.tipologiaEsameCorrente = new TipologiaEsame("Visita cardiologica", "Una visita...", (float) 50);
 		this.paziente = new Paziente("Mario", "Rossi", "MRRSS94D12H492J", "Via del Corso 12", new Date(1994, 12, 21), "laMiaPassword", "mario@test.com");
 
-		this.teachingHospital.getPaziente(this.paziente);
+		this.teachingHospital.addPaziente(this.paziente);
 		this.teachingHospital.addMedico(this.medico);
+		this.thweb.inserisciEsame(this.paziente.getCodiceFiscale(), this.medico.getCodice(), MAGGIO_22_2016);
+
+		
 	}
 
 	@Test
 	public void nessunEsameAggiuntoAlPazienteTest() {
-		assertTrue(this.paziente.getEsamiDaSostenere().isEmpty());
+		assertFalse(this.paziente.getEsamiDaSostenere().isEmpty());
 	}
 
+	//TODO controlla topologiaEsame
 	@Test
 	public void unEsameAggiuntoTest() {
-		this.thweb.inserisciEsame(this.paziente.getCodiceFiscale(), this.medico.getCodice(), MAGGIO_22_2016);
 		assertFalse(this.paziente.getEsamiDaSostenere().isEmpty());
-		assertEquals(this.medico, this.paziente.getEsamiDaSostenere().get(0).getMedico());
 	}
 
 	@Test
-	public void dueEsamiAggiuntiTest() {
-		this.thweb.inserisciEsame(this.paziente.getCodiceFiscale(), this.medico.getCodice(), MAGGIO_22_2016);
+	public void dueEsamiDiversiAggiuntiTest() {
 		this.thweb.inserisciEsame(this.paziente.getCodiceFiscale(), this.medico.getCodice(), MAGGIO_23_2016);
 		assertEquals(2, this.paziente.getEsamiDaSostenere().size());
 	}
+	
+	@Test //da valutare
+	public void dueEsamiUgualiAggiuntiTest() {
+		this.thweb.inserisciEsame(this.paziente.getCodiceFiscale(), this.medico.getCodice(), MAGGIO_22_2016);
+		assertEquals(2, this.paziente.getEsamiDaSostenere().size());
+	}
+	
+	@Test
+	public void verificaDocenteCheSosterràEsame(){
+		assertEquals(medico,this.paziente.getEsamiDaSostenere().get(0).getMedico());
+	}
+	
+	
+	
+	
 }

@@ -7,7 +7,7 @@ public class Esame {
 	private String codice;
 	private Date dataAvvenutaPrenotazione;
 	private Date dataEsame;
-	private ElencoRisultato elenco;
+	private ElencoRisultato elencoRisultato;
 	private Medico medico;
 	private Paziente paziente;
 	private TipologiaEsame tipologiaEsame;
@@ -48,11 +48,11 @@ public class Esame {
 	}
 
 	public ElencoRisultato getElenco() {
-		return elenco;
+		return elencoRisultato;
 	}
 
 	public void setElenco(ElencoRisultato elenco) {
-		this.elenco = elenco;
+		this.elencoRisultato = elenco;
 	}
 
 	public Medico getMedico() {
